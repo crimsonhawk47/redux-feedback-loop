@@ -5,6 +5,9 @@ import './App.css';
 
 //Importing Components
 import Feeling from '../Feeling/Feeling'
+import Understanding from '../Understanding/Understanding'
+import Support from '../Support/Support'
+import Comment from '../Comment/Comment'
 
 class App extends Component {
   render() {
@@ -16,10 +19,11 @@ class App extends Component {
             <h4><i>Don't forget it!</i></h4>
           </header>
           <br />
-          <Route path="/feel">
-            <Feeling />
-          </Route>
         </div>
+        <Route path="/" exact component={Feeling} />
+        <Route path="/" exact component={Understanding} />
+        <Route path="/" exact component={Support} />
+        <Route path="/" exact component={Comment} />
       </Router>
     );
   }
