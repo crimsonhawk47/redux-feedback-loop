@@ -1,18 +1,19 @@
 import React, {Component} from 'react';
-class Feeling extends Component{
+class Support extends Component{
 
     handleClick = () => {
-        this.props.history.push('/Understanding');
+        this.props.history.push('/Comment');
     }
  
     render(){
         return(
         <div>
-            Hi I'm Feeling
+            Hi I'm Support
             <button onClick={this.handleClick}>Next</button>
+
         </div>
         )
     
     }
 }
-export default Feeling
+export default Support
