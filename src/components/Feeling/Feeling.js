@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 class Feeling extends Component{
 
     handleClick = () => {
-        console.log(`Hey`);
-        
+        this.props.history.push('/Understanding');
     }
  
     render(){
