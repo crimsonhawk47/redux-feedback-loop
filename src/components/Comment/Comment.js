@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 class Comment extends Component{
 
+    
+
     handleClick = () => {
-        console.log(`End`);
-        
+        this.props.history.push('/Review');
     }
  
     render(){
