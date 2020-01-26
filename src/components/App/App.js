@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { HashRouter as Router, Link, Route } from 'react-router-dom'
 import './App.css';
-
 //Importing Components
 import Feeling from '../Feeling/Feeling'
 import Understanding from '../Understanding/Understanding'
@@ -26,7 +25,6 @@ class App extends Component {
         <Route path="/Support" exact component={Support} />
         <Route path="/Comment" exact component={Comment} />
         <Route path="/Review" exact component={Review} />
-
       </Router>
     );
   }
