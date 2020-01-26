@@ -12,15 +12,13 @@ class Review extends Component {
             comment: feedback.comment
         }
         axios.post('/feedback', feedbackToSend)
-            .then((result) => {
-                console.log(result);
-                this.props.history.push('/Thanks')
+            .then(() => {
+                // console.log(result);
+                // this.props.history.push('/Thanks')
             }).catch((err)=>{
                 console.log(err);
                 
             })
-
-
     }
 
     render() {

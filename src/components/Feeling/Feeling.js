@@ -29,7 +29,7 @@ class Feeling extends Component {
                 <input type="radio" name="feels" value="3" onChange={this.logFeelings} />
                 <input type="radio" name="feels" value="4" onChange={this.logFeelings} />
                 <input type="radio" name="feels" value="5" onChange={this.logFeelings} />
-                <button onClick={this.handleClick}>Next</button><p>Stressed</p>
+                <button onClick={this.handleClick}>Next</button>
             </div>
         )
 
