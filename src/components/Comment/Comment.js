@@ -2,6 +2,13 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux'
 class Comment extends Component{
 
+    componentDidMount(){
+        this.setState({
+            comment: this.props.reduxStore.feedback.comment
+        })
+        
+    }
+
     state = {
         comment: false
     }

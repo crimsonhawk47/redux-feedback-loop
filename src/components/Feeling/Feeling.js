@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 class Feeling extends Component {
 
+    componentDidMount(){
+        this.setState({
+            feeling: this.props.reduxState.feedback.feeling
+        })
+        
+    }
+
     state = {
         feeling: false
     }

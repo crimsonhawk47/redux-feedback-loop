@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 class Support extends Component {
 
+    componentDidMount(){
+        this.setState({
+            support: this.props.reduxStore.feedback.support
+        })
+        
+    }
+
     state = {
         support: false
     }

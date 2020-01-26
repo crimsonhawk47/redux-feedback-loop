@@ -4,6 +4,13 @@ import { connect } from 'react-redux';
 
 class Understanding extends Component {
 
+    componentDidMount(){
+        this.setState({
+            understanding: this.props.reduxStore.feedback.understanding
+        })
+        
+    }
+
     state = {
         understanding: false
     }
@@ -28,15 +35,20 @@ class Understanding extends Component {
         })
     }
 
+    isChecked = (event) => {
+        return (event.target.value === this.state.understanding)
+    }
+
     render() {
+        
         return (
             <div>
                 <h3>How well are you understanding the material?</h3>
-                <input type="radio" name="understanding" value="1" onChange={this.logUnderstanding} />
-                <input type="radio" name="understanding" value="2" onChange={this.logUnderstanding} />
-                <input type="radio" name="understanding" value="3" onChange={this.logUnderstanding} />
-                <input type="radio" name="understanding" value="4" onChange={this.logUnderstanding} />
-                <input type="radio" name="understanding" value="5" onChange={this.logUnderstanding} />
+                <input type="radio" name="understanding" value="1" onChange={this.logUnderstanding} checked={this.state.understanding == 1} />
+                <input type="radio" name="understanding" value="2" onChange={this.logUnderstanding} checked={this.state.understanding == 2}/>
+                <input type="radio" name="understanding" value="3" onChange={this.logUnderstanding} checked={this.state.understanding == 3}/>
+                <input type="radio" name="understanding" value="4" onChange={this.logUnderstanding} checked={this.state.understanding == 4}/>
+                <input type="radio" name="understanding" value="5" onChange={this.logUnderstanding} checked={this.state.understanding == 5}/>
                 <button onClick={this.handleClick}>Next</button>
                 <button onClick={this.props.history.goBack}>Go Back</button>
             </div>
