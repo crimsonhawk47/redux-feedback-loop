@@ -26,6 +26,8 @@ class Comment extends Component{
             <h3>Any other comments you'd like to add? (optional)</h3>
             <input placeholder="comments..." onChange={this.logComment}></input>
             <button onClick={this.handleClick}>Next</button>
+            <button onClick={this.props.history.goBack}>Go Back</button>
+
         </div>
         )
     

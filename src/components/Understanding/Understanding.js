@@ -38,6 +38,7 @@ class Understanding extends Component {
                 <input type="radio" name="understanding" value="4" onChange={this.logUnderstanding} />
                 <input type="radio" name="understanding" value="5" onChange={this.logUnderstanding} />
                 <button onClick={this.handleClick}>Next</button>
+                <button onClick={this.props.history.goBack}>Go Back</button>
             </div>
         )
 

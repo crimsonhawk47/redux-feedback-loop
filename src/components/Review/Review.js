@@ -28,6 +28,8 @@ class Review extends Component {
                 <p>Support: {this.props.reduxStore.feedback.support}</p>
                 <p>Comments: {this.props.reduxStore.feedback.comment}</p>
                 <button onClick={this.submitForm}>Submit?</button>
+                <button onClick={this.props.history.goBack}>Go Back</button>
+
             </div>
         )
 
