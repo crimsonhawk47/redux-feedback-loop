@@ -16,6 +16,33 @@ const feedback = (state = {}, action) => {
             }
         )
     }
+
+    if (action.type === 'understanding'){
+        return(
+            {
+                ...state,
+                understanding: action.payload
+            }
+        )
+    }
+
+    if (action.type === 'support'){
+        return(
+            {
+                ...state,
+                support: action.payload
+            }
+        )
+    }
+
+    if (action.type === 'comment'){
+        return(
+            {
+                ...state,
+                comment: action.payload
+            }
+        )
+    }
     return state
 }
 
