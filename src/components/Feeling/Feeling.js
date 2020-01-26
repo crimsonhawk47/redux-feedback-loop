@@ -23,12 +23,13 @@ class Feeling extends Component {
     render() {
         return (
             <div>
+            <h3>How are you feeling Today?</h3>
                 <input type="radio" name="feels" value="1" onChange={this.logFeelings} />
                 <input type="radio" name="feels" value="2" onChange={this.logFeelings} />
                 <input type="radio" name="feels" value="3" onChange={this.logFeelings} />
                 <input type="radio" name="feels" value="4" onChange={this.logFeelings} />
                 <input type="radio" name="feels" value="5" onChange={this.logFeelings} />
-                <button onClick={this.handleClick}>Next</button>
+                <button onClick={this.handleClick}>Next</button><p>Stressed</p>
             </div>
         )
 

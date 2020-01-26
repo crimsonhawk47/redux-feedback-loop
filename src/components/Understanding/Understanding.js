@@ -11,11 +11,11 @@ class Understanding extends Component {
     
     handleClick = () => {
         
-        this.props.history.push('/Support');
         this.props.dispatch({
             type: 'understanding',
             payload: this.state.understanding
         })
+        this.props.history.push('/Support');
     }
 
     logUnderstanding = (event) => {
@@ -27,6 +27,7 @@ class Understanding extends Component {
     render() {
         return (
             <div>
+                <h3>How well are you understanding the material?</h3>
                 <input type="radio" name="understanding" value="1" onChange={this.logUnderstanding} />
                 <input type="radio" name="understanding" value="2" onChange={this.logUnderstanding} />
                 <input type="radio" name="understanding" value="3" onChange={this.logUnderstanding} />
