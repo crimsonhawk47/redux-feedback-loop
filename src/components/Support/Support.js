@@ -7,11 +7,16 @@ class Support extends Component {
     }
 
     handleClick = () => {
-        this.props.dispatch({
-            type: 'support',
-            payload: this.state.support
-        })
-        this.props.history.push('/Comment');
+        if (this.state.support){
+            this.props.dispatch({
+                type: 'support',
+                payload: this.state.support
+            })
+            this.props.history.push('/Comment');
+        }
+        else{
+            alert('Please select a value')
+        }
     }
 
     logSupport = (event) => {

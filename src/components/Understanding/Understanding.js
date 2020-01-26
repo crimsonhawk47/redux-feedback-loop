@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 
 class Understanding extends Component {
@@ -8,14 +8,18 @@ class Understanding extends Component {
         understanding: false
     }
 
-    
+
     handleClick = () => {
-        
-        this.props.dispatch({
-            type: 'understanding',
-            payload: this.state.understanding
-        })
-        this.props.history.push('/Support');
+        if (this.state.understanding) {
+            this.props.dispatch({
+                type: 'understanding',
+                payload: this.state.understanding
+            })
+            this.props.history.push('/Support');
+        }
+        else{
+            alert('Please select a value')
+        }
     }
 
     logUnderstanding = (event) => {
@@ -42,7 +46,7 @@ class Understanding extends Component {
 
 
 const mapStateToProps = (reduxStore) => {
-    return(
+    return (
         {
             reduxStore
         }

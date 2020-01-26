@@ -23,7 +23,7 @@ class Comment extends Component{
     render(){
         return(
         <div>
-            Any other comments you'd like to add?
+            <h3>Any other comments you'd like to add? (optional)</h3>
             <input placeholder="comments..." onChange={this.logComment}></input>
             <button onClick={this.handleClick}>Next</button>
         </div>

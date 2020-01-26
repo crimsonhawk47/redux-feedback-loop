@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 class Feeling extends Component {
 
     state = {
@@ -7,11 +7,16 @@ class Feeling extends Component {
     }
 
     handleClick = () => {
+        if (Number(this.state.feeling)) {
             this.props.dispatch({
                 type: 'feeling',
                 payload: this.state.feeling
             })
-        this.props.history.push('/Understanding');
+            this.props.history.push('/Understanding');
+        }
+        else{
+            alert('Please select a value')
+        }
     }
 
     logFeelings = (event) => {
@@ -23,7 +28,7 @@ class Feeling extends Component {
     render() {
         return (
             <div>
-            <h3>How are you feeling Today?</h3>
+                <h3>How are you feeling Today?</h3>
                 <input type="radio" name="feels" value="1" onChange={this.logFeelings} />
                 <input type="radio" name="feels" value="2" onChange={this.logFeelings} />
                 <input type="radio" name="feels" value="3" onChange={this.logFeelings} />
@@ -38,8 +43,8 @@ class Feeling extends Component {
 
 const mapStateToProps = (reduxState) => {
     return {
-      reduxState
+        reduxState
     }
-  }
+}
 
 export default connect(mapStateToProps)(Feeling)
