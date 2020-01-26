@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import { HashRouter as Router, Link, Route } from 'react-router-dom'
 import './App.css';
 
@@ -26,7 +26,6 @@ class App extends Component {
         <Route path="/Support" exact component={Support} />
         <Route path="/Comment" exact component={Comment} />
         <Route path="/Review" exact component={Review} />
-
       </Router>
     );
   }

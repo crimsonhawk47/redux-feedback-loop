@@ -1,13 +1,46 @@
-import React, {Component} from 'react';
-class Review extends Component{
- 
-    render(){
-        return(
-        <div>
-            I am Review
-        </div>
+import React, { Component } from 'react';
+import axios from 'axios'
+import { connect } from 'react-redux'
+class Review extends Component {
+
+    submitForm = () => {
+        let feedback = this.props.reduxStore.feedback;
+        let feedbackToSend = {
+            feeling: feedback.feeling,
+            understanding: feedback.understanding,
+            support: feedback.support,
+            comment: feedback.comment
+        }
+        axios.post('/feedback', feedbackToSend)
+            .then((result) => {
+                console.log(result);
+                
+            }).catch((err)=>{
+                console.log(err);
+                
+            })
+
+
+    }
+
+    render() {
+        return (
+            <div>
+                <p>Feelings: {this.props.reduxStore.feedback.feeling}</p>
+                <p>Understanding: {this.props.reduxStore.feedback.understanding}</p>
+                <p>Support: {this.props.reduxStore.feedback.support}</p>
+                <p>Comments: {this.props.reduxStore.feedback.comment}</p>
+                <button onClick={this.submitForm}>Submit?</button>
+            </div>
         )
-    
+
     }
 }
-export default Review
+
+const mapStateToProps = (reduxStore) => {
+    return (
+        { reduxStore }
+    )
+}
+
+export default connect(mapStateToProps)(Review)
