@@ -14,7 +14,7 @@ class Review extends Component {
         axios.post('/feedback', feedbackToSend)
             .then((result) => {
                 console.log(result);
-                
+                this.props.history.push('/Thanks')
             }).catch((err)=>{
                 console.log(err);
                 
