@@ -26,6 +26,8 @@ class Feeling extends Component {
     }
 
     render() {
+        console.log('feeling is ',this.state.feeling);
+        
         return (
             <div>
                 <h3>How are you feeling Today?</h3>

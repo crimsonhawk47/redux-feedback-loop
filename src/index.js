@@ -43,6 +43,10 @@ const feedback = (state = {}, action) => {
             }
         )
     }
+
+    if(action.type === 'reset'){
+        return({})
+    }
     return state
 }
 
